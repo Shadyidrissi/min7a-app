@@ -11,10 +11,10 @@ import {
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
+  { name: "countries", href: "#", current: true },
+  { name: "Contract", href: "#", current: false },
+  { name: "About", href: "#", current: false },
+  { name: "Contact", href: "#", current: false },
 ];
 
 function classNames(...classes) {
@@ -23,7 +23,7 @@ function classNames(...classes) {
 
 export default function NavbarX() {
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" style={{backgroundColor:"#6DB9EF"}}>
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -43,8 +43,8 @@ export default function NavbarX() {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <img
-                    className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                    className="h-12 w-auto"
+                    src="https://i.ibb.co/p0ngs0L/Mina7-logo-removebg-preview.png"
                     alt="Your Company"
                   />
                 </div>
@@ -64,11 +64,7 @@ export default function NavbarX() {
                       <a
                         key={item.name}
                         href={item.href}
-                        className={classNames(
-                          item.current
-                            ? "bg-gray-900 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          "rounded-md px-3 py-2 text-sm font-medium"
+                        className={classNames("text-black hover:bg-black hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
