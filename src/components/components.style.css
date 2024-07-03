@@ -105,4 +105,30 @@
   font-weight: 600;
   margin-left: 10px;
 }
+
+.pages-blog{
+  display: flex;
+  align-items: center;
+  height: 4vh;
+  background: #3081D0;
+  width:20% ;
+  margin: 25px 40%;
+  color: white;
+  font-weight: 700;
+  justify-content: center;
+  border: 1px solid black;
+}
+.pages-blog>li{
+  padding: 2px 10px;
+  background-color: #6DB9EF;
+  border: 1px solid white;
+  margin: 0 5px;
+
+}
+.pages-blog>li:hover{
+  background-color: #3081D0;
+  color: #000;
+  cursor: pointer;
+  border-color: black;
+}
 /* !  END home page */
