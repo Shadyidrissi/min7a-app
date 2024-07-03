@@ -64,8 +64,9 @@ export default function NavbarX() {
                       <a
                         key={item.name}
                         href={item.href}
-                        className={classNames("text-black hover:bg-black hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                        className={classNames("text-black hover:bg-black hover:text-white rounded-md px-3 py-2 text-medium font-medium"
                         )}
+                        style={{fontWeight:'600'}}
                         aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}

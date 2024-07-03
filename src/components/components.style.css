@@ -9,7 +9,7 @@
   flex-wrap: wrap;
 }
 .card-top-3 {
-  width: 600px;
+  width: 500px;
   background: #fff5c2;
   height: 400px;
   margin: 20px 0;
@@ -46,7 +46,8 @@
 /*! END last three in top home */
 /* ! home page */
 #title-home {
-  width: 20%;
+  min-width: 20%;
+  max-width: 50%;
   padding: 5px 10px;
   border: 0.4px solid black;
   margin: 20px 40%;
@@ -60,7 +61,6 @@
 }
 .iteams-home {
   min-height: 50vh;
-  max-height: 100vh;
   width: 95%;
   margin: 10px 2.5%;
   display: flex;
@@ -132,3 +132,14 @@
   border-color: black;
 }
 /* !  END home page */
+/* ! Footer */
+.footer-iteam-quick-link{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+/* ! END Footer */
