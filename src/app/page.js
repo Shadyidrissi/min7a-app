@@ -1,12 +1,10 @@
-import Footer from "../../components/Footer";
-import NavbarX from "../../components/NavbarX"
 import './globals.css'
+import LastThree from '../components/LastThree'
 
-export default function Home() {
+export default function page() {
   return (
-    <>
-    <NavbarX/>
-    <Footer/>
-    </>
+    <div style={{minHeight:'100vh'}}>
+      <LastThree/>
+    </div>
   );
 }
