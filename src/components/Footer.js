@@ -7,7 +7,7 @@ function Footer() {
       <div className="container px-6 py-12 mx-auto">
         <div
           className=""
-          style={{ display: "flex", justifyContent: "space-evenly"}}
+          style={{ display: "flex", justifyContent: "space-evenly" }}
         >
           <div className="footer-iteam-quick-link">
             <p className="font-semibold text-gray-800 dark:text-white">
@@ -15,18 +15,27 @@ function Footer() {
             </p>
 
             <div className="flex flex-col items-start mt-5 space-y-2">
-              <Link href='#' className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
+              <Link
+                href="#"
+                className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500"
+              >
                 Home
               </Link>
-              <Link href='' className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
+              <Link
+                href=""
+                className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500"
+              >
                 Who We Are
               </Link>
-              <Link href='' className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
+              <Link
+                href=""
+                className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500"
+              >
                 Contact Us
               </Link>
             </div>
           </div>
-          <div className="footer-iteam-quick-link" style={{width:'70%'}}>
+          <div className="footer-iteam-quick-link" style={{ width: "70%" }}>
             <p
               className="font-semibold text-gray-800 dark:text-white"
               style={{ fontWeight: "800" }}
@@ -65,50 +74,48 @@ function Footer() {
           </div>
 
           <div className="flex gap-4 hover:cursor-pointer">
-            <img
-              src="https://www.svgrepo.com/show/303114/facebook-3-logo.svg"
-              width="30"
-              height="30"
-              alt="fb"
-            />
-            <img
-              src="https://www.svgrepo.com/show/303115/twitter-3-logo.svg"
-              width="30"
-              height="30"
-              alt="tw"
-            />
-            <img
-              src="https://www.svgrepo.com/show/303145/instagram-2-1-logo.svg"
-              width="30"
-              height="30"
-              alt="inst"
-            />
-            <img
-              src="https://www.svgrepo.com/show/94698/github.svg"
-              className=""
-              width="30"
-              height="30"
-              alt="gt"
-            />
-            <img
-              src="https://www.svgrepo.com/show/22037/path.svg"
-              width="30"
-              height="30"
-              alt="pn"
-            />
-            <img
-              src="https://www.svgrepo.com/show/28145/linkedin.svg"
-              width="30"
-              height="30"
-              alt="in"
-            />
-            <img
-              src="https://www.svgrepo.com/show/22048/dribbble.svg"
-              className=""
-              width="30"
-              height="30"
-              alt="db"
-            />
+            <Link href="">
+              <img
+                src="https://www.svgrepo.com/show/303114/facebook-3-logo.svg"
+                width="30"
+                height="30"
+                alt="fb"
+              />
+            </Link>
+            <Link href="">
+              <img
+                src="https://www.svgrepo.com/show/303115/twitter-3-logo.svg"
+                width="30"
+                height="30"
+                alt="tw"
+              />
+            </Link>
+            <Link href="">
+              <img
+                src="https://www.svgrepo.com/show/303145/instagram-2-1-logo.svg"
+                width="30"
+                height="30"
+                alt="inst"
+              />
+            </Link>
+            <Link href="">
+              <img
+                src="https://www.svgrepo.com/show/94698/github.svg"
+                className=""
+                width="30"
+                height="30"
+                alt="gt"
+              />
+            </Link>
+
+            <Link href="https://getbootstrap.com/docs/5.0/getting-started/introduction/">
+              <img
+                src="https://www.svgrepo.com/show/28145/linkedin.svg"
+                width="30"
+                height="30"
+                alt="in"
+              />
+            </Link>
           </div>
         </div>
         <p className="font-sans p-8 text-start md:text-center md:text-lg md:p-4 text-white">
