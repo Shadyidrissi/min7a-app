@@ -11,7 +11,7 @@ import {
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "countries", href: "#", current: true },
+  { name: "countries", href: "/countries", current: true },
   { name: "Contract", href: "#", current: false },
   { name: "About", href: "#", current: false },
   { name: "Contact", href: "#", current: false },
