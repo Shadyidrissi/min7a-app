@@ -13,13 +13,32 @@
   background: #fff5c2;
   height: 400px;
   margin: 20px 0;
+  border-radius: 20px;
 }
 .card-top-3 > img {
-  width: 100%;
+  border-radius: 18px;
+  width: 99%;
+  margin:  0.5%;
   height: 70%;
+}
+.card-top-3 >p > span >button {
+  padding: 5px 10px ;
+  margin: 0 20px 10px 0;
+  border: 1px solid black;
+  color: black;
+  font-weight: 700;
+  background-color: white;
+  border-radius: 6px;
+}
+.card-top-3 >p > span >button:hover{
+  background-color: black;
+  color: white;
 }
 .card-top-3 > p {
   height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-weight: 600;
   align-items: center;
   font-size: 16px;
@@ -73,19 +92,38 @@
   height: 340px;
   background: #F4F27E;
   margin: 10px 20px;
+  border-radius: 20px;
 }
 .card-home > img {
-  width: 100%;
+  width: 99%;
   height: 70%;
+  margin: 0.5%;
+  border-radius: 18px;
   background: #000;
 }
 .card-home > p {
   margin-left: 15px;
   font-weight: 600;
   font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   height: 10%;
   display: flex;
   align-items: center;
+}
+.card-home>p>span>button{
+  padding: 3px 7px ;
+  margin: 0 20px 10px 0;
+  border: 1px solid black;
+  color: black;
+  font-weight: 700;
+  background-color: white;
+  border-radius: 6px;
+}
+.card-home>p > span >button:hover{
+  background-color: black;
+  color: white;
 }
 .card-home > ul {
   display: flex;
