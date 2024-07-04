@@ -10,7 +10,7 @@
 }
 .card-top-3 {
   width: 500px;
-  background: #fff5c2;
+  background: #9AD0C2;
   height: 400px;
   margin: 20px 0;
   border-radius: 20px;
@@ -21,6 +21,11 @@
   margin:  0.5%;
   height: 70%;
 }
+.card-top-3p>span{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
 .card-top-3 >p > span >button {
   padding: 5px 10px ;
   margin: 0 20px 10px 0;
@@ -28,7 +33,7 @@
   color: black;
   font-weight: 700;
   background-color: white;
-  border-radius: 6px;
+  border-radius: 10px;
 }
 .card-top-3 >p > span >button:hover{
   background-color: black;
@@ -70,10 +75,11 @@
   padding: 5px 10px;
   border: 0.4px solid black;
   margin: 20px 40%;
-  background-color: #6DB9EF;
   font-size: 28px;
   font-weight: 600;
-  color: black;
+  border-radius: 15px;
+  color: white;
+  background: #000;
   text-transform: uppercase;
   display: flex;
   justify-content: center;
@@ -90,7 +96,7 @@
 .card-home {
   width: 400px;
   height: 340px;
-  background: #F4F27E;
+  background: #37b7c39a;
   margin: 10px 20px;
   border-radius: 20px;
 }
@@ -112,6 +118,11 @@
   display: flex;
   align-items: center;
 }
+.card-home>p>span{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
 .card-home>p>span>button{
   padding: 3px 7px ;
   margin: 0 20px 10px 0;
@@ -119,7 +130,7 @@
   color: black;
   font-weight: 700;
   background-color: white;
-  border-radius: 6px;
+  border-radius: 10px;
 }
 .card-home>p > span >button:hover{
   background-color: black;
@@ -148,23 +159,24 @@
   display: flex;
   align-items: center;
   height: 4vh;
-  background: #3081D0;
+  background: #000000;
+  border-radius: 10px;
   width:20% ;
   margin: 25px 40%;
   color: white;
   font-weight: 700;
   justify-content: center;
-  border: 1px solid black;
+  border: 1px solid rgb(255, 255, 255);
 }
 .pages-blog>li{
   padding: 2px 10px;
-  background-color: #6DB9EF;
   border: 1px solid white;
   margin: 0 5px;
+  border-radius: 8px;
 
 }
 .pages-blog>li:hover{
-  background-color: #3081D0;
+  background-color: #37B7C3;
   color: #000;
   cursor: pointer;
   border-color: black;

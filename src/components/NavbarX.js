@@ -9,12 +9,13 @@ import {
   MenuItems,
 } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 const navigation = [
-  { name: "countries", href: "/countries", current: true },
-  { name: "Contract", href: "#", current: false },
-  { name: "About", href: "#", current: false },
-  { name: "Contact", href: "#", current: false },
+  { name: "Countries", href: "/countries", current: true },
+  { name: "Contract", href: "/", current: false },
+  { name: "About", href: "/about", current: false },
+  { name: "Contact", href: "/contact", current: false },
 ];
 
 function classNames(...classes) {
@@ -23,7 +24,7 @@ function classNames(...classes) {
 
 export default function NavbarX() {
   return (
-    <Disclosure as="nav" style={{backgroundColor:"#6DB9EF"}}>
+    <Disclosure as="nav" style={{backgroundColor:"#92C7CF"}}>
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -42,11 +43,13 @@ export default function NavbarX() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
+                  <Link href='/'>
                   <img
                     className="h-12 w-auto"
                     src="https://i.ibb.co/p0ngs0L/Mina7-logo-removebg-preview.png"
-                    alt="Your Company"
-                  />
+                    alt="bego"
+                    />
+                    </Link>
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">

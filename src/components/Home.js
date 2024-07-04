@@ -88,9 +88,37 @@ function Home() {
       cover:
         "https://www.elmin7a.com/wp-content/uploads/2019/11/Masters-in-Finance-International-Excellence-Scholarships-768x448-1.jpg",
     },
+    {
+      title: "hello",
+      date: "12/12/2025",
+      flag: "https://www.rjtravelagency.com/wp-content/uploads/2023/09/Flag-of-Palestine.jpg",
+      cover:
+        "https://www.elmin7a.com/wp-content/uploads/2019/11/Masters-in-Finance-International-Excellence-Scholarships-768x448-1.jpg",
+    },
+    {
+      title: "hello",
+      date: "12/12/2025",
+      flag: "https://www.rjtravelagency.com/wp-content/uploads/2023/09/Flag-of-Palestine.jpg",
+      cover:
+        "https://www.elmin7a.com/wp-content/uploads/2019/11/Masters-in-Finance-International-Excellence-Scholarships-768x448-1.jpg",
+    },
+    {
+      title: "hello",
+      date: "12/12/2025",
+      flag: "https://www.rjtravelagency.com/wp-content/uploads/2023/09/Flag-of-Palestine.jpg",
+      cover:
+        "https://www.elmin7a.com/wp-content/uploads/2019/11/Masters-in-Finance-International-Excellence-Scholarships-768x448-1.jpg",
+    },
+    {
+      title: "hello",
+      date: "12/12/2025",
+      flag: "https://www.rjtravelagency.com/wp-content/uploads/2023/09/Flag-of-Palestine.jpg",
+      cover:
+        "https://www.elmin7a.com/wp-content/uploads/2019/11/Masters-in-Finance-International-Excellence-Scholarships-768x448-1.jpg",
+    },
   ]);
   return (
-    <>
+    <div>
       <h2 id="title-home">All MIna7 are Valide</h2>
       <div className="iteams-home">
         {data.map((iteam, index) => {
@@ -104,6 +132,7 @@ function Home() {
               <p>
                 {iteam.date}
                 <span>
+                  <button>View</button>
                   <button>Apply</button>
                 </span>
               </p>
@@ -116,7 +145,7 @@ function Home() {
         <li>2</li>
         <li>3</li>
       </ul>
-    </>
+    </div>
   );
 }
 

@@ -37,7 +37,13 @@ function LastThree() {
               <img src={item.flag} alt="flag" />
               <h4>{item.title}</h4>
             </ul>
-            <p>{item.date}<span><button>Apply</button></span></p>
+            <p>
+              {item.date}
+              <span>
+                <button>View</button>
+                <button>Apply</button>
+              </span>
+            </p>
           </div>
         );
       })}
