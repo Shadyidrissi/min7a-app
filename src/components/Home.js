@@ -1,150 +1,83 @@
-"use client";
-import React, { useState } from "react";
-import "./components.style.css";
+"use client"
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import './components.style.css';
 
 function Home() {
-  const [data, setData] = useState([
-    {
-      title: "hello",
-      date: "12/12/2025",
-      flag: "https://cdn.britannica.com/79/4479-050-6EF87027/flag-Stars-and-Stripes-May-1-1795.jpg",
-      cover:
-        "https://workstudyvisa.com/wp-content/uploads/2021/10/scholarships-in-canada-for-african-students-1-1024x580-1.jpg",
-    },
-    {
-      title: "hello",
-      date: "12/12/2025",
-      flag: "https://cdn.britannica.com/82/2982-050-4A783E03/flag-prototype-Netherlands-countries-European-flags.jpg",
-      cover:
-        "https://pbs.twimg.com/media/CNblTOwUsAA-3Ub?format=jpg&name=large",
-    },
-    {
-      title: "hello",
-      date: "12/12/2025",
-      flag: "https://www.rjtravelagency.com/wp-content/uploads/2023/09/Flag-of-Palestine.jpg",
-      cover:
-        "https://www.elmin7a.com/wp-content/uploads/2019/11/Masters-in-Finance-International-Excellence-Scholarships-768x448-1.jpg",
-    },
-    {
-      title: "hello",
-      date: "12/12/2025",
-      flag: "https://www.rjtravelagency.com/wp-content/uploads/2023/09/Flag-of-Palestine.jpg",
-      cover:
-        "https://www.elmin7a.com/wp-content/uploads/2019/11/Masters-in-Finance-International-Excellence-Scholarships-768x448-1.jpg",
-    },
-    {
-      title: "hello",
-      date: "12/12/2025",
-      flag: "https://www.rjtravelagency.com/wp-content/uploads/2023/09/Flag-of-Palestine.jpg",
-      cover:
-        "https://www.elmin7a.com/wp-content/uploads/2019/11/Masters-in-Finance-International-Excellence-Scholarships-768x448-1.jpg",
-    },
-    {
-      title: "hello",
-      date: "12/12/2025",
-      flag: "https://www.rjtravelagency.com/wp-content/uploads/2023/09/Flag-of-Palestine.jpg",
-      cover:
-        "https://www.elmin7a.com/wp-content/uploads/2019/11/Masters-in-Finance-International-Excellence-Scholarships-768x448-1.jpg",
-    },
-    {
-      title: "hello",
-      date: "12/12/2025",
-      flag: "https://www.rjtravelagency.com/wp-content/uploads/2023/09/Flag-of-Palestine.jpg",
-      cover:
-        "https://www.elmin7a.com/wp-content/uploads/2019/11/Masters-in-Finance-International-Excellence-Scholarships-768x448-1.jpg",
-    },
-    {
-      title: "hello",
-      date: "12/12/2025",
-      flag: "https://www.rjtravelagency.com/wp-content/uploads/2023/09/Flag-of-Palestine.jpg",
-      cover:
-        "https://www.elmin7a.com/wp-content/uploads/2019/11/Masters-in-Finance-International-Excellence-Scholarships-768x448-1.jpg",
-    },
-    {
-      title: "hello",
-      date: "12/12/2025",
-      flag: "https://www.rjtravelagency.com/wp-content/uploads/2023/09/Flag-of-Palestine.jpg",
-      cover:
-        "https://www.elmin7a.com/wp-content/uploads/2019/11/Masters-in-Finance-International-Excellence-Scholarships-768x448-1.jpg",
-    },
-    {
-      title: "hello",
-      date: "12/12/2025",
-      flag: "https://www.rjtravelagency.com/wp-content/uploads/2023/09/Flag-of-Palestine.jpg",
-      cover:
-        "https://www.elmin7a.com/wp-content/uploads/2019/11/Masters-in-Finance-International-Excellence-Scholarships-768x448-1.jpg",
-    },
-    {
-      title: "hello",
-      date: "12/12/2025",
-      flag: "https://www.rjtravelagency.com/wp-content/uploads/2023/09/Flag-of-Palestine.jpg",
-      cover:
-        "https://www.elmin7a.com/wp-content/uploads/2019/11/Masters-in-Finance-International-Excellence-Scholarships-768x448-1.jpg",
-    },
-    {
-      title: "hello",
-      date: "12/12/2025",
-      flag: "https://www.rjtravelagency.com/wp-content/uploads/2023/09/Flag-of-Palestine.jpg",
-      cover:
-        "https://www.elmin7a.com/wp-content/uploads/2019/11/Masters-in-Finance-International-Excellence-Scholarships-768x448-1.jpg",
-    },
-    {
-      title: "hello",
-      date: "12/12/2025",
-      flag: "https://www.rjtravelagency.com/wp-content/uploads/2023/09/Flag-of-Palestine.jpg",
-      cover:
-        "https://www.elmin7a.com/wp-content/uploads/2019/11/Masters-in-Finance-International-Excellence-Scholarships-768x448-1.jpg",
-    },
-    {
-      title: "hello",
-      date: "12/12/2025",
-      flag: "https://www.rjtravelagency.com/wp-content/uploads/2023/09/Flag-of-Palestine.jpg",
-      cover:
-        "https://www.elmin7a.com/wp-content/uploads/2019/11/Masters-in-Finance-International-Excellence-Scholarships-768x448-1.jpg",
-    },
-    {
-      title: "hello",
-      date: "12/12/2025",
-      flag: "https://www.rjtravelagency.com/wp-content/uploads/2023/09/Flag-of-Palestine.jpg",
-      cover:
-        "https://www.elmin7a.com/wp-content/uploads/2019/11/Masters-in-Finance-International-Excellence-Scholarships-768x448-1.jpg",
-    },
-    {
-      title: "hello",
-      date: "12/12/2025",
-      flag: "https://www.rjtravelagency.com/wp-content/uploads/2023/09/Flag-of-Palestine.jpg",
-      cover:
-        "https://www.elmin7a.com/wp-content/uploads/2019/11/Masters-in-Finance-International-Excellence-Scholarships-768x448-1.jpg",
-    },
-  ]);
+  const [data, setData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pages, setPages] = useState([]);
+  const itemsPerPage = 12;
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('https://api-toturial-min7a.onrender.com/showBlog'); // Adjust URL as per your server setup
+      const filteredData = response.data.filter(item => !item.hidden); // Filter out hidden items
+      const sortedData = filteredData.sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by date descending
+      setData(sortedData);
+      generatePages(sortedData.length);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  const generatePages = (totalItems) => {
+    const pageCount = Math.ceil(totalItems / itemsPerPage);
+    const pagesArray = [];
+    for (let i = 1; i <= pageCount; i++) {
+      pagesArray.push(i);
+    }
+    setPages(pagesArray);
+  };
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
+  const formatDateTime = (dateTimeString) => {
+    const date = new Date(dateTimeString);
+    const formattedDate = `${('0' + (date.getMonth() + 1)).slice(-2)}/${('0' + date.getDate()).slice(-2)}/${date.getFullYear()} ${('0' + date.getHours()).slice(-2)}:${('0' + date.getMinutes()).slice(-2)}`;
+    return formattedDate;
+  };
+
   return (
     <div>
       <h2 id="title-home">All MIna7 are Valide</h2>
       <div className="iteams-home">
-        {data.map((iteam, index) => {
-          return (
-            <div className="card-home">
-              <img src={iteam.cover} alt="" />
+        {data
+          .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+          .map((item, index) => (
+            <div className="card-home" key={index}>
+              <img src={item.cover} alt="" />
               <ul>
-                <img src={iteam.flag} alt="" />
-                <h4>{iteam.title}</h4>
+                <img src={item.countryImage} alt="" />
+                <h4>{item.name}</h4>
               </ul>
               <p>
-                {iteam.date}
+                {formatDateTime(item.date)}
                 <span>
                   <button>View</button>
                   <button>Apply</button>
                 </span>
               </p>
             </div>
-          );
-        })}
+          ))}
       </div>
-      <ul className="pages-blog">
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-      </ul>
+      <div className="pages-blog">
+        {pages.map((page) => (
+          <button
+            key={page}
+            onClick={() => handlePageChange(page)}
+            className={page === currentPage ? 'active' : ''}
+          >
+            {page}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

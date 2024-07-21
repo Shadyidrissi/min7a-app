@@ -1,38 +1,129 @@
-import React from 'react'
-import '../pages.style.css'
-import Link from 'next/link'
+"use client";
+import React, { useEffect, useState } from "react";
+import "../pages.style.css";
+import "../../components/components.style.css";
+import Link from "next/link";
 
-function page() {
+function Page() {
+  const [data, setData] = useState([]);
+  const [countries, setCountries] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
+  const [filterType, setFilterType] = useState("all");
+  const [selectedCountry, setSelectedCountry] = useState("");
+
+  useEffect(() => {
+    // Fetch data from the API
+    fetch("https://api-toturial-min7a.onrender.com/showBlog")
+      .then((response) => response.json())
+      .then((data) => {
+        // Filter out hidden items
+        const visibleData = data.filter(item => !item.hidden);
+
+        // Store the fetched data
+        setData(visibleData);
+
+        // Extract unique countries with their images and types
+        const uniqueCountries = [];
+        const countrySet = new Set();
+        visibleData.forEach((blog) => {
+          if (!countrySet.has(blog.countryName)) {
+            countrySet.add(blog.countryName);
+            uniqueCountries.push({
+              name: blog.countryName,
+              image: blog.countryImage,
+              type: blog.type,
+            }); // Assuming each blog object has an image and type property
+          }
+        });
+        setCountries(uniqueCountries);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
+  useEffect(() => {
+    // Filter data based on selected type and country
+    let filtered = data;
+    if (filterType !== "all") {
+      filtered = filtered.filter((blog) => blog.type === filterType);
+    }
+    if (selectedCountry !== "") {
+      filtered = filtered.filter(
+        (blog) => blog.countryName === selectedCountry
+      );
+    }
+    // Sort the filtered data by date in descending order
+    filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+    setFilteredData(filtered);
+  }, [filterType, selectedCountry, data]);
+
+  const handleFilterTypeChange = (event) => {
+    setFilterType(event.target.value);
+  };
+
+  const handleCountryChange = (event) => {
+    setSelectedCountry(event.target.value);
+  };
+
+  const formatDateTime = (dateTimeString) => {
+    const date = new Date(dateTimeString);
+    const formattedDate = `${("0" + (date.getMonth() + 1)).slice(-2)}/${(
+      "0" + date.getDate()
+    ).slice(-2)}/${date.getFullYear()} ${("0" + date.getHours()).slice(
+      -2
+    )}:${("0" + date.getMinutes()).slice(-2)}`;
+    return formattedDate;
+  };
+
   return (
     <>
-        <header className='header-countries'>
-            <h2>countries</h2>
-            <ul>
-                <button href=''> <img src="" alt="" name='xx' /> </button>
-                <button href=''> <img src="" alt="" name='xx' /> </button>
-                <button href=''> <img src="" alt="" name='xx' /> </button>
-                <button href=''> <img src="" alt="" name='xx' /> </button>
-                <button href=''> <img src="" alt="" name='xx' /> </button>
-            </ul>
-        </header>
-        <section className='section-countries'>
-            <header>
-                <button>Show Only Mina7</button>
-                <button>Show Only Contrat</button>
-                <button>Show Contrat & Min7a</button>
-            </header>
-            <div className='search-div'>
-                <button>
-                <svg width="50" height="50" viewBox="0 0 512 512"  xmlns="http://www.w3.org/2000/svg" class="h-full w-full"><rect width="512" height="512" x="0" y="0" rx="30" fill="transparent" stroke="transparent" stroke-width="0" stroke-opacity="100%" paint-order="stroke"></rect><svg width="256px" height="256px" viewBox="0 0 24 24" fill="currentColor" x="128" y="128" role="img"  xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><path fill="currentColor" d="M10 2.5a7.5 7.5 0 0 1 5.964 12.048l4.743 4.745a1 1 0 0 1-1.32 1.497l-.094-.083l-4.745-4.743A7.5 7.5 0 1 1 10 2.5Zm0 2a5.5 5.5 0 1 0 0 11a5.5 5.5 0 0 0 0-11Z"/></g></svg></svg>
-                </button>
+      <header className="header-countries">
+        <h2 id="title-header">Countries</h2>
+        <select id="country-option" onChange={handleFilterTypeChange}>
+          <option value="all">All</option>
+          <option value="min7a">Min7a</option>
+          <option value="contract">Contract</option>
+        </select>
+        <select id="country-option" onChange={handleCountryChange}>
+          <option value="">Select a Country</option>
+          {countries.map((country, index) => (
+            <option key={index} value={country.name}>
+              {country.name}
+            </option>
+          ))}
+        </select>
+        <ul className="section-countries">
+          {countries.map((country, index) => (
+            <button
+              key={index}
+              onClick={() => setSelectedCountry(country.name)}
+            >
+              <img src={country.image} alt={country.name} name={country.name} />
+            </button>
+          ))}
+        </ul>
+      </header>
+      <div className="body-div">
+        <div className="iteams-home">
+          {filteredData.map((blog, index) => (
+            <div className="card-home" key={index}>
+              <img src={blog.cover} alt="" />
+              <ul>
+                <img src={blog.countryImage} alt="" />
+                <h4>{blog.name}</h4>
+              </ul>
+              <p>
+                {formatDateTime(blog.date)}
+                <span>
+                  <button>View</button>
+                  <button>Apply</button>
+                </span>
+              </p>
             </div>
-        </section>
-        <div className='body-div'>
-            {/* fetch api data */}
-            data on here 
+          ))}
         </div>
+      </div>
     </>
-  )
+  );
 }
 
-export default page
+export default Page;

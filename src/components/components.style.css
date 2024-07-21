@@ -152,7 +152,7 @@
 .card-home > ul > h4 {
   font-size: 20px;
   font-weight: 600;
-  margin-left: 10px;
+  margin-left: 10px;  
 }
 
 .pages-blog{
@@ -168,14 +168,14 @@
   justify-content: center;
   border: 1px solid rgb(255, 255, 255);
 }
-.pages-blog>li{
+.pages-blog>button{
   padding: 2px 10px;
   border: 1px solid white;
   margin: 0 5px;
   border-radius: 8px;
 
 }
-.pages-blog>li:hover{
+.pages-blog>button:hover{
   background-color: #37B7C3;
   color: #000;
   cursor: pointer;

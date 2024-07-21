@@ -13,7 +13,7 @@ import Link from "next/link";
 
 const navigation = [
   { name: "Countries", href: "/countries", current: true },
-  { name: "Contract", href: "/", current: false },
+  // { name: "Contract", href: "/contract", current: false },
   { name: "About", href: "/about", current: false },
   { name: "Contact", href: "/contact", current: false },
 ];

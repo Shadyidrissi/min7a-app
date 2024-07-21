@@ -34,10 +34,20 @@
 }
 /* ! END header counties */
 /* ! section countries */
+.header-countries{
+    position: relative;
+    height: 40vh;
+}
+
+#country-option{
+    padding: 5px 10px ;
+    margin: 10px 0;
+    border-radius: 4px;
+    font-weight: 600;
+}
 .section-countries{
     width: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
 }
 .section-countries>header{
