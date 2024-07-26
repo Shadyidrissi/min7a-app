@@ -46,7 +46,7 @@ export default function NavbarX() {
                   <Link href='/'>
                   <img
                     className="h-12 w-auto"
-                    src="https://i.ibb.co/p0ngs0L/Mina7-logo-removebg-preview.png"
+                    src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png"
                     alt="bego"
                     />
                     </Link>
