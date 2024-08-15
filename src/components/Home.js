@@ -54,14 +54,14 @@ function Home() {
             <div className="card-home" key={index}>
               <img src={item.cover} alt="" />
               <ul>
-                <img src={item.countryImage} alt="" />
+                <img style={{objectFit:"cover"}} src={item.countryImage} alt="" />
                 <h4>{item.name}</h4>
               </ul>
               <p>
                 {formatDateTime(item.date)}
                 <span>
-                  <button>View</button>
-                  <button>Apply</button>
+                <button><a href={`/${item._id}`}>View</a></button>
+                <button>Apply</button>
                 </span>
               </p>
             </div>

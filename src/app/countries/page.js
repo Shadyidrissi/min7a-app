@@ -44,7 +44,7 @@ function Page() {
     // Filter data based on selected type and country
     let filtered = data;
     if (filterType !== "all") {
-      filtered = filtered.filter((blog) => blog.type === filterType);
+      filtered = filtered.filter((blog) => blog.type === filterType); 
     }
     if (selectedCountry !== "") {
       filtered = filtered.filter(
@@ -80,8 +80,8 @@ function Page() {
         <h2 id="title-header">Countries</h2>
         <select id="country-option" onChange={handleFilterTypeChange}>
           <option value="all">All</option>
-          <option value="min7a">Min7a</option>
-          <option value="contract">Contract</option>
+          <option value="min7a">min7a</option>
+          <option value="contract">contract</option>
         </select>
         <select id="country-option" onChange={handleCountryChange}>
           <option value="">Select a Country</option>
@@ -97,7 +97,7 @@ function Page() {
               key={index}
               onClick={() => setSelectedCountry(country.name)}
             >
-              <img src={country.image} alt={country.name} name={country.name} />
+              <img style={{objectFit:"cover"}} src={country.image} alt={country.name} name={country.name} />
             </button>
           ))}
         </ul>
@@ -108,13 +108,13 @@ function Page() {
             <div className="card-home" key={index}>
               <img src={blog.cover} alt="" />
               <ul>
-                <img src={blog.countryImage} alt="" />
+                <img style={{objectFit:"cover"}} src={blog.countryImage} alt="" />
                 <h4>{blog.name}</h4>
               </ul>
               <p>
                 {formatDateTime(blog.date)}
                 <span>
-                  <button>View</button>
+                <button><a href={`/${blog._id}`}>View</a></button>
                   <button>Apply</button>
                 </span>
               </p>

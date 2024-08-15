@@ -12,8 +12,10 @@ function ClientPage() {
   }, []);
 
   useEffect(() => {
-    if (ids) {
+    if (ids && Object.keys(ids).length > 0) {
       fetchData();
+    } else {
+      setLoading(false); // No need to set loading if there's no ID to fetch data
     }
   }, [ids]);
 
@@ -45,8 +47,8 @@ function ClientPage() {
   return (
     <div>
       {loading ? (
-        <p>Loading...</p>
-      ) : (
+        <div>Loading...</div> // Display loading indicator while fetching data
+      ) : ids && Object.keys(ids).length < 0 ? (
         <div>
           <div className="div-top-3">
             {[ids.id1, ids.id2, ids.id3].map((id, index) => {
@@ -56,13 +58,13 @@ function ClientPage() {
                   <div className="card-top-3" key={index}>
                     <img src={item.cover} alt="cover" />
                     <div className="image-title-card-top-3">
-                      <img src={item.countryImage} alt="flag" />
+                      <img style={{ objectFit: "cover" }} src={item.countryImage} alt="flag" />
                       <h4>{item.name}</h4>
                     </div>
                     <p>
                       {item.date}
                       <span>
-                        <button>View</button>
+                        <button><a href={`/${item._id}`}>View</a></button>
                         <button>Apply</button>
                       </span>
                     </p>
@@ -74,6 +76,8 @@ function ClientPage() {
             })}
           </div>
         </div>
+      ) : (
+        <div style={{height:"0"}}></div> // Display fallback content when `ids` is empty or null
       )}
     </div>
   );
